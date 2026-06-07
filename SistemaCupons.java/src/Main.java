@@ -1,0 +1,49 @@
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        // Lista dinâmica para simular nossa base de dados de clientes
+        ArrayList<String> clientesExclusivos = new ArrayList<>();
+
+        // Array fixo com os cupons disponíveis no sistema de marketing
+        String[] bancoDeCupons = {"PROMO10", "QUERO20", "CLIENTETOP30", "SUPER50"};
+
+        System.out.println("=== 🏷️ SISTEMA DE CAPTAÇÃO E SORTEIO DE CUPONS ===");
+
+        // 1. Fase de Cadastro (Simulando a captação de Leads/Clientes)
+        System.out.println("\nVamos cadastrar 3 clientes para o sorteio de hoje.");
+        for (int i = 1; i <= 3; i++) {
+            System.out.print("Digite o e-mail do cliente " + i + ": ");
+            String email = scanner.nextLine();
+            clientesExclusivos.add(email);
+        }
+
+        System.out.println("\n--- Clientes cadastrados com sucesso! ---");
+
+        // 2. Fase de Processamento e Regra de Negócio (O Sorteio)
+        System.out.println("\nPressione ENTER para rodar o algoritmo de sorteio...");
+        scanner.nextLine();
+
+        // Escolhe um cliente aleatório da lista
+        int indiceClienteSorteado = random.nextInt(clientesExclusivos.size());
+        String clientePremiado = clientesExclusivos.get(indiceClienteSorteado);
+
+        // Escolhe um cupom aleatório do array
+        int indiceCupomSorteado = random.nextInt(bancoDeCupons.length);
+        String cupomPremiado = bancoDeCupons[indiceCupomSorteado];
+
+        // 3. Exibição do Resultado (Simulando o disparo do prêmio)
+        System.out.println("=================================================");
+        System.out.println("🎉 PARABÉNS AO GANHADOR!");
+        System.out.println("📧 Cliente Premiado: " + clientePremiado);
+        System.out.println("🏷️ Cupom Atribuído: " + cupomPremiado);
+        System.out.println("=================================================");
+
+        scanner.close();
+    }
+}
