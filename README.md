@@ -5,9 +5,10 @@ Pré-requisitos:
 
 ### Passo a Passo
 1. **Clone o repositório:**
+gh repo clone EduardoBlanc0/sistema-de-cupons
 
-2. Entre na pasta do projeto:
+3. Entre na pasta do projeto:
 cd SistemaCupons
 
-3. Compile e execute o aplicativo com um único comando:
-javac SistemaCupons.java && java SistemaCupons
+4. Compile e execute o aplicativo com um único comando:
+javac SistemaCupons.java e java SistemaCupons
